@@ -72,6 +72,53 @@
         .button:hover {
             background-color: #ff4500;
         }
+        @media (max-width: 768px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+                padding: 10px 0;
+            }
+
+            table th,
+            table td {
+                padding: 8px;
+            }
+
+            table {
+                font-size: 14px;
+            }
+
+            header h1 {
+                font-size: 18px;
+            }
+
+            .button {
+                padding: 8px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 16px;
+            }
+
+            .button {
+                padding: 6px 10px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            nav a {
+                padding: 8px 10px;
+            }
+
+            footer {
+                padding: 8px 0;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
