@@ -1,0 +1,196 @@
+/* General Reset and Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+}
+
+/* Navbar Styling */
+nav {
+    width: 100%;
+    background-color: #ff6347;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav .logo h3 {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav .menu {
+    display: flex;
+    gap: 15px;
+}
+
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 25px 20px;
+}
+
+nav .menu a:hover {
+    background-color: #ff4f34;
+}
+
+/* Container for Form */
+.container {
+    width: 100%;
+    max-width: 480px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo for the Form */
+.logo h1 {
+    text-align: center;
+    color: #ff6347;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form Heading */
+.form-box h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.underline {
+    width: 50px;
+    height: 3px;
+    background-color: #ff6347;
+    margin: 10px auto;
+}
+
+.input-group {
+    margin-top: 20px;
+}
+
+.input-field {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-field i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 15px 12px 35px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-field input:focus {
+    border-color: #ff6347;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ff4f34;
+}
+
+a {
+    text-decoration: none;
+    color: #ff6347;
+}
+
+a:hover {
+    cursor: pointer;;
+}
+
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f4f4f4;
+    font-size: 14px;
+    color: #555;
+}
+
+footer span {
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    .logo h1 {
+        font-size: 30px;
+    }
+
+    .form-box h1 {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    .form-box h1 {
+        font-size: 22px;
+    }
+
+    .input-field input {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

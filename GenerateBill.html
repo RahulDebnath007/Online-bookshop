@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Bill - Bookwala Vendor</title>
+    <link rel="stylesheet" href="./css/GenerateBill.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <logo>BOOKWALA</logo>
+        </div>
+        <div class="menu">
+            <a href="vendor1.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Help&Support.html">Help & Support</a>
+            <a href="#">Settings</a>
+            <a href="scv.html">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Generate Bill Content -->
+    <div class="container">
+        <div class="form-box">
+            <h2>Generate Bill</h2>
+            <!-- Bill Generation Form -->
+            <form id="billForm">
+                <div class="input-group">
+                    <label for="orderId">Order ID:</label>
+                    <input type="text" id="orderId" name="orderId" placeholder="Enter Order ID" required>
+                </div>
+                <div class="input-group">
+                    <label for="bookTitle">Book Title:</label>
+                    <input type="text" id="bookTitle" name="bookTitle" placeholder="Enter Book Title" required>
+                </div>
+                <div class="input-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+                </div>
+                <div class="input-group">
+                    <label for="price">Price (Per Unit):</label>
+                    <input type="number" id="price" name="price" placeholder="Enter Price" required>
+                </div>
+                <div class="btn-field">
+                    <button type="submit" class="generateBtn">Generate Bill</button>
+                </div>
+            </form>
+
+            <!-- Display Generated Bill -->
+            <div class="bill-output" id="billOutput" style="display: none;">
+                <h3>Generated Bill</h3>
+                <table>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Book Title</th>
+                        <th>Quantity</th>
+                        <th>Price (Per Unit)</th>
+                        <th>Total Amount</th>
+                    </tr>
+                    <tr>
+                        <td id="billOrderId"></td>
+                        <td id="billBookTitle"></td>
+                        <td id="billQuantity"></td>
+                        <td id="billPrice"></td>
+                        <td id="billTotalAmount"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Created by <span>Rahul Debnath, Soumik Saha</span>&copy; 2024 Online Book Shop(Bookwala) - All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        document.getElementById('billForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get input values
+            var orderId = document.getElementById('orderId').value;
+            var bookTitle = document.getElementById('bookTitle').value;
+            var quantity = document.getElementById('quantity').value;
+            var price = document.getElementById('price').value;
+
+            // Calculate total amount
+            var totalAmount = quantity * price;
+
+            // Display generated bill
+            document.getElementById('billOrderId').textContent = orderId;
+            document.getElementById('billBookTitle').textContent = bookTitle;
+            document.getElementById('billQuantity').textContent = quantity;
+            document.getElementById('billPrice').textContent = price;
+            document.getElementById('billTotalAmount').textContent = totalAmount;
+
+            // Show the bill output
+            document.getElementById('billOutput').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>

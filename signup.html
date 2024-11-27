@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Bookwala</title>
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h3>BOOKWALA</h3>
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Help & Support</a>
+            <a href="#">Settings</a>
+            <a href="scv.html">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form Section -->
+    <div class="container">
+        <div class="form-box">
+            <h1>Create an Account</h1>
+            <div class="underline"></div>
+            <form action="/signup" method="POST">
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+                <p>Already have an account? <a href="vendor.html">Login here.</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

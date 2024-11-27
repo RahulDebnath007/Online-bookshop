@@ -1,0 +1,124 @@
+:root{
+    --orange:#ff6347;
+    --dark-color: #ff4500;
+    --black:#444;
+    --light-color:#666;
+    --border:0.1rem solid rgba(0,0,0,0.1);
+    --border-hover:1rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+/* General body and page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Create account section styles */
+.create-account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Create account box styles */
+.create-account-box {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading style */
+.create-account-box h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Text style for description */
+.create-account-box p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Input field styling */
+.create-account-form .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.create-account-form .input-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.create-account-form .input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+}
+
+/* Submit button style */
+.create-account-form .btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #ff6347;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-account-form .btn:hover {
+    background-color: #ff4500;
+}
+
+/* Login link styling */
+.create-account-box .login-link {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.create-account-box .login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.create-account-box .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .create-account-box {
+        padding: 1.5rem;
+    }
+
+    .create-account-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .create-account-form .input-group input {
+        font-size: 0.9rem;
+    }
+
+    .create-account-form .btn {
+        font-size: 1rem;
+    }
+}

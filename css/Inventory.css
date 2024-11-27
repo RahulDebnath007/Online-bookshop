@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('debby-hudson-asviIGR3CPE-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    background: #ff6347;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 25px 20px;
+    font-size: 18px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #ff4500;
+    border-radius: 5px;
+}
+
+main {
+    flex: 1;
+    margin-top: 120px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff6347;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+    color: black;
+}
+
+table th {
+    background-color: #ff6347;
+    color: white;
+}
+
+table td button {
+    padding: 6px 12px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+}
+
+table td button:hover {
+    opacity: 0.9;
+}
+
+button.button {
+    padding: 20px 40px;
+    font-size: 18px;
+    background-color: #ff6347;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button.button:hover {
+    background-color: #ff4500;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    .logo {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .menu {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .menu a {
+        padding: 15px;
+        font-size: 16px;
+        margin: 5px 10px;
+    }
+
+    main {
+        margin-top: 150px;
+        padding: 0 10px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+
+    table th, table td {
+        padding: 12px;
+    }
+
+    table td button {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+
+    button.button {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Tablet responsiveness */
+@media screen and (max-width: 1024px) {
+    nav {
+        padding: 15px 30px;
+    }
+
+    .menu a {
+        padding: 20px;
+        font-size: 17px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .form-box {
+        padding: 25px;
+    }
+
+    table th, table td {
+        padding: 14px;
+    }
+
+    button.button {
+        padding: 18px 35px;
+        font-size: 17px;
+    }
+}
+
+/* Desktop responsiveness */
+@media screen and (min-width: 1200px) {
+    .menu a {
+        padding: 25px 25px;
+        font-size: 18px;
+    }
+
+    .form-box {
+        padding: 30px;
+    }
+
+    table th, table td {
+        padding: 15px;
+    }
+
+    button.button {
+        padding: 20px 40px;
+        font-size: 18px;
+    }
+}

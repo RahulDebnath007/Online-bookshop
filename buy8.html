@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/buy8.css">
+</head>
+<body>
+    <!-- Buy Now Section -->
+<section class="buy-now-container">
+    <div class="buy-now-box">
+        <h2>Buy Now</h2>
+        <div class="product-info">
+            <img src="./image/book-8.png" alt="Product Image" class="product-image">
+            <div class="product-details">
+                <h3>Product Name</h3>
+                <p class="product-description">This is a short description of the product. It explains its features and benefits.</p>
+                <p class="product-price">500 Rs</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+            </div>
+        </div>
+
+        <div class="shipping-info">
+            <h3>Shipping Information</h3>
+            <form id="shipping-form">
+                <div class="input-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="address">Shipping Address:</label>
+                    <input type="text" id="address" name="address" placeholder="Enter your shipping address" required>
+                </div>
+                <div class="input-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                </div>
+                <div class="input-group">
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" placeholder="Enter your ZIP code" required>
+                </div>
+                <div class="input-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="USA">USA</option>
+                        <option value="Canada">Canada</option>
+                        <option value="UK">UK</option>
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn buy-now-btn" id="buy-now-btn">Buy Now</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Payment Method Section (Initially Hidden) -->
+<section class="payment-method-container" id="payment-form-container">
+    <div class="payment-method-box">
+        <h2>Payment Method</h2>
+        <form id="payment-form">
+            <div class="card-info">
+                <label for="card-name">Name on Card:</label>
+                <input type="text" id="card-name" name="card-name" placeholder="John Doe" required>
+                
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9876 5432" required>
+
+                <div class="card-details">
+                    <div class="input-group">
+                        <label for="expiry-date">Expiry Date:</label>
+                        <input type="month" id="expiry-date" name="expiry-date" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn payment-btn">Submit Payment</button>
+        </form>
+    </div>
+</section>
+
+<!-- Order Placed Confirmation (Initially Hidden) -->
+<section class="order-placed-container" id="order-placed-container">
+    <div class="order-placed-box">
+        <h2>Order Placed Successfully!</h2>
+        <p>Your payment has been processed. Thank you for your purchase!</p>
+        <button class="btn" id="go-home-btn">Go to Home</button>
+    </div>
+</section>
+
+    
+</body>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the elements for each form
+        const buyNowBtn = document.getElementById('buy-now-btn');  // The button to trigger Buy Now
+        const buyNowContainer = document.querySelector('.buy-now-container');  // The container for the Buy Now form
+        const paymentFormContainer = document.querySelector('.payment-method-container');  // The payment method container
+        const paymentForm = document.getElementById('payment-form');  // The payment form itself
+        const orderPlacedContainer = document.getElementById('order-placed-container'); // Order placed confirmation container
+        const goHomeBtn = document.getElementById('go-home-btn');  // Button to go home after order placement
+
+        // Handle Buy Now Button click to show Payment Form
+        buyNowBtn.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Hide the Buy Now Form
+            buyNowContainer.style.display = 'none';
+            
+            // Show the Payment Form
+            paymentFormContainer.style.display = 'flex';
+        });
+
+        // Handle Payment Form Submit
+        paymentForm.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission for simulation
+            
+            // Simulate successful payment and transition to Order Placed page
+            paymentFormContainer.style.display = 'none'; // Hide payment form
+            
+            // Show Order Placed Confirmation
+            orderPlacedContainer.style.display = 'flex';
+        });
+
+        // Handle "Go to Home" button click on the Order Placed page
+        goHomeBtn.addEventListener('click', function () {
+            // Redirect to home page (can change URL if needed)
+            window.location.href = '/'; // Or update with your desired URL
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/forgot.css">
+</head>
+
+<body>
+    <section class="forgot-password-container">
+        <!-- Forgot Password Box -->
+        <div class="forgot-password-box" id="forgot-password-box">
+            <h2>Forgot Password</h2>
+            <p>Enter your email address to reset your password.</p>
+            <form id="forgot-password-form" class="forgot-password-form">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <button type="button" class="btn" onclick="showChangePasswordForm()">Reset Password</button>
+                <p class="back-to-login">
+                    <a href="index.html">Back to Login</a>
+                </p>
+            </form>
+        </div>
+    
+        <!-- Change Password Box (Initially hidden) -->
+        <div class="change-password-box" id="change-password-box" style="display: none;">
+            <h2>Change Password</h2>
+            <p>Enter your new password.</p>
+            <form id="change-password-form" class="change-password-form">
+                <div class="input-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Enter new password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm new password" required>
+                </div>
+                <button type="submit" class="btn">Change Password</button>
+                <p class="back-to-login">
+                    <a href="index.html">Back to Login</a>
+                </p>
+            </form>
+        </div>
+    </section>
+    
+    
+    <!-- <a href="index.html" class="button">Confirm</a> -->
+</body>
+<script>
+    function showChangePasswordForm() {
+        // Hide the forgot password form and show the change password form
+        document.getElementById('forgot-password-box').style.display = 'none';
+        document.getElementById('change-password-box').style.display = 'block';
+    }
+</script>
+
+</html>

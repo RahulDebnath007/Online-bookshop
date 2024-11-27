@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Shop - Shopkeeper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color:#ff6347;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 1rem;
+        }
+        nav a:hover{
+            background-color:#ff4500 ;
+        }
+        main {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .button {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Shopkeeper Dashboard - Bookwala</h1>
+    </header>
+    
+    <nav>
+        <a href="#">Home</a>
+        <a href="orders.html">Orders</a>
+        <a href="scv.html">Logout</a>
+    </nav>
+    
+    <main>
+        <table>
+            <tr>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Actions</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Software Engineering</td>
+                <td>Ian Sommerville</td>
+                <td>45</td>
+                <td>20</td>
+                <td><button class="button">Edit</button> <button class="button">Delete</button></td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Clean Code</td>
+                <td>Robert C. Martin</td>
+                <td>54</td>
+                <td>15</td>
+                <td><button class="button">Edit</button> <button class="button">Delete</button></td>
+            </tr>
+            </tr>
+                <td>103</td>
+                <td>Rich Dad Poor Dad</td>
+                <td>Robert T.Kiyosaki</td>
+                <td>32</td>
+                <td>18</td>
+                <td><button class="button">Edit</button> <button class="button">Delete</button></td>
+            </tr>
+        </table>
+        <button class="button" onclick="addBook()">Add New Book</button>
+    </main>
+    
+    <footer>
+        <p>Created by <span>Rahul Debnath, Sayantan Poddar</span> | &copy; 2024 Online Book Shop (Bookwala) - All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        
+let books = [
+    { id: 101, title: 'Software Engineering', author: 'Ian Sommerville', price: 45, stock: 20 },
+    { id: 102, title: 'Clean Code', author: 'Robert C. Martin', price: 54, stock: 15 },
+    { id: 103, title: 'Rich Dad Poor Dad', author: 'Robert T.Kiyosaki', price: 32, stock: 18}
+];
+
+function displayBooks() {
+    const tableBody = document.querySelector('table tbody');
+    tableBody.innerHTML = '';
+
+    books.forEach((book, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${book.id}</td>
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>$${book.price.toFixed(2)}</td>
+            <td>${book.stock}</td>
+            <td>
+                <button class="button" onclick="editBook(${index})">Edit</button>
+                <button class="button" onclick="deleteBook(${index})">Delete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+function addBook() {
+    const id = prompt('Enter Book ID:');
+    const title = prompt('Enter Book Title:');
+    const author = prompt('Enter Author Name:');
+    const price = parseFloat(prompt('Enter Book Price:'));
+    const stock = parseInt(prompt('Enter Stock Quantity:'), 10);
+
+    if (id && title && author && !isNaN(price) && !isNaN(stock)) {
+        books.push({ id: parseInt(id, 10), title, author, price, stock });
+        displayBooks();
+    } else {
+        alert('Please provide valid book details.');
+    }
+}
+
+function editBook(index) {
+    const book = books[index];
+    const newTitle = prompt('Edit Book Title:', book.title);
+    const newAuthor = prompt('Edit Author Name:', book.author);
+    const newPrice = parseFloat(prompt('Edit Book Price:', book.price));
+    const newStock = parseInt(prompt('Edit Stock Quantity:', book.stock), 10);
+
+    if (newTitle && newAuthor && !isNaN(newPrice) && !isNaN(newStock)) {
+        books[index] = { ...book, title: newTitle, author: newAuthor, price: newPrice, stock: newStock };
+        displayBooks();
+    } else {
+        alert('Please provide valid details.');
+    }
+}
+
+function deleteBook(index) {
+    if (confirm('Are you sure you want to delete this book?')) {
+        books.splice(index, 1);
+        displayBooks();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', displayBooks);
+
+document.querySelector('.button').addEventListener('click', addBook);
+    </script>
+</body>
+</html>

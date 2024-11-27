@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('debby-hudson-asviIGR3CPE-unsplash.jpg') center/cover no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+nav .logo {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+nav .menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .menu a:hover {
+    background-color: #ff4500;
+    transform: translateY(-3px);
+}
+
+/* Container Styling */
+.container {
+    margin-top: 120px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto 50px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+/* Heading Styling */
+h2 {
+    font-size: 36px;
+    color: #ff6347;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #ff6347;
+    color: white;
+    font-weight: 600;
+}
+
+table td {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+table td button {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+table td button:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+table td .btn {
+    background-color: #28a745;
+}
+
+table td .btn.cancel {
+    background-color: #dc3545;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        align-items: center;
+    }
+
+    nav .logo {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    nav .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .menu a {
+        margin: 5px 0;
+        font-size: 16px;
+    }
+
+    .container {
+        width: 95%;
+        margin-top: 180px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    table th, table td {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    table td button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 85%;
+        margin-top: 150px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    table th, table td {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    table td button {
+        font-size: 16px;
+        padding: 8px 14px;
+    }
+}

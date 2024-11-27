@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Role Selection</title>
+    <style>
+        
+
+        :root {
+            --orange: #ff6347;
+            --dark-color: #ff4500;
+            --black: #444;
+            --light-color: #666;
+            --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+            --border-hover: 1rem solid var(--black);
+            --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+           
+        }
+
+       
+        .container {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+          
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .switch {
+            margin: 15px 0;
+        }
+
+        
+        .switch a {
+            display: block;
+            
+            padding: 14px 24px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #ff6347;
+            text-decoration: none;
+            border-radius: 25px;
+            width: 100%;
+          
+            box-sizing: border-box;
+            
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+       
+        .switch a:hover {
+            background-color: #ff4500;
+            transform: scale(1.05);
+        }
+
+        .switch a.active {
+            background-color: #28a745;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer - Help Text */
+        .form-footer {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .form-footer a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .form-footer a:hover {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .switch a {
+                font-size: 16px;
+                padding: 12px 16px;
+               
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Select Your Role</h2>
+        <form id="role-selection-form">
+            <div class="switch">
+                <a href="lofocr.html" id="shopkeeper-link" onclick="activate(this)">Shopkeeper</a>
+            </div>
+            <div class="switch">
+                <a href="index.html" id="customer-link" onclick="activate(this)">Customer</a>
+            </div>
+            <div class="switch">
+                <a href="vendor.html" id="vendor-link" onclick="activate(this)">Vendor</a>
+            </div>
+        </form>
+        <div class="form-footer">
+            <p>Need help? <a href="#">Contact us</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Function to activate the selected role
+        function activate(element) {
+            // Remove "active" class from all links
+            document.querySelectorAll('.switch a').forEach(link => {
+                link.classList.remove('active');
+            });
+            // Add "active" class to the clicked link
+            element.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

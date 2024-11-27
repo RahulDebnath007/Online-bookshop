@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url('/debby-hudson-asviIGR3CPE-unsplash.jpg') ;
+    background-size: cover;
+    color: #fff;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+nav .logo {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+nav .menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 0 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+nav .menu a:hover {
+    background-color: #ff4500;
+    transform: translateY(-3px);
+}
+
+/* Main Container */
+.container {
+    margin-top: 120px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 120px auto 50px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+/* Heading */
+h2 {
+    font-size: 36px;
+    color: #ff6347;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin-bottom: 40px;
+}
+
+.faq-section h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.faq {
+    margin-bottom: 15px;
+}
+.faq p{
+    color: black;
+}
+.faq strong {
+    font-size: 18px;
+    color: #ff6347;
+}
+
+/* Contact Section */
+.contact-section {
+    margin-top: 50px;
+}
+
+.contact-section h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.contact-section ul {
+    list-style-type: none;
+}
+
+.contact-section li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.contact-section li a {
+    color: #ff6347;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-section li a:hover {
+    color: #e25736;
+}
+
+.contact-section i {
+    margin-right: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+        align-items: center;
+    }
+
+    nav .logo {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    nav .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .menu a {
+        margin: 5px 0;
+        font-size: 16px;
+    }
+
+    .container {
+        width: 95%;
+        margin-top: 180px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .faq-section h3, .contact-section h3 {
+        font-size: 24px;
+    }
+
+    .faq strong {
+        font-size: 16px;
+    }
+
+    .contact-section li {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 85%;
+        margin-top: 150px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .faq-section h3, .contact-section h3 {
+        font-size: 26px;
+    }
+
+    .faq strong {
+        font-size: 17px;
+    }
+
+    .contact-section li {
+        font-size: 17px;
+    }
+}

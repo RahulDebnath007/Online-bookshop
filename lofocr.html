@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopkeeper Login - Online Book Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"],
+        .container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #ff6347;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #ff4500 ;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .error,
+        .message {
+            color: red;
+            margin-top: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Shopkeeper Login</h2>
+            <form onsubmit="return validateLogin()">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <a href="owener.html" class="button" onclick="return validateLogin()">Login</a>
+            </form>
+            <div class="forgot-password">
+                <a href="#" onclick="showForgotPassword()">Forgot Password?</a> |
+                <a href="#" onclick="showCreateAccount()">Create New Account</a>
+            </div>
+            <div class="error" id="error-message"></div>
+        </div>
+       <a href="scv.html" class="button">back to option page
+       </a>
+        <!-- Forgot Password Form -->
+        <div id="forgot-password-form" class="hidden">
+            <h2>Forgot Password</h2>
+            <p>Enter your email address to reset your password.</p>
+            <form onsubmit="return resetPassword()">
+                <input type="email" id="email" placeholder="Email Address" required>
+                <a href="#" class="button" onclick="return resetPassword()">Reset Password</a>
+            </form>
+            <div class="forgot-password">
+                <a href="#" onclick="showLoginForm()">Back to Login</a>
+            </div>
+            <div class="message" id="reset-message"></div>
+        </div>
+
+        <!-- Create New Account Form -->
+        <div id="create-account-form" class="hidden">
+            <h2>Create New Account</h2>
+            <form onsubmit="return createAccount()">
+                <input type="text" id="new-username" placeholder="Username" required>
+                <input type="email" id="new-email" placeholder="Email Address" required>
+                <input type="password" id="new-password" placeholder="Password" required>
+                <a href="#" class="button" onclick="return createAccount()">Create Account</a>
+            </form>
+            <div class="forgot-password">
+                <a href="#" onclick="showLoginForm()">Back to Login</a>
+            </div>
+            <div class="message" id="account-message"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the forgot password form
+        function showForgotPassword() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('forgot-password-form').classList.remove('hidden');
+            document.getElementById('create-account-form').classList.add('hidden');
+        }
+
+        // Function to show the login form
+        function showLoginForm() {
+            document.getElementById('forgot-password-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+            document.getElementById('create-account-form').classList.add('hidden');
+        }
+
+        // Function to show the create account form
+        function showCreateAccount() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('forgot-password-form').classList.add('hidden');
+            document.getElementById('create-account-form').classList.remove('hidden');
+        }
+
+        // Basic validation for the login form
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            const validUsername = 'sayantanpoddar31@gmail.com';
+            const validPassword = '42687590';
+
+            if (username === validUsername && password === validPassword) {
+                alert('Login successful');
+                window.location.href = 'index.html';
+                return true;
+            } else {
+                errorMessage.textContent = 'Invalid username or password';
+                return false;
+            }
+        }
+
+        // Simulate password reset functionality
+        function resetPassword() {
+            const email = document.getElementById('email').value;
+            const resetMessage = document.getElementById('reset-message');
+
+            if (email) {
+                resetMessage.textContent = 'A password reset link has been sent to your email.';
+                resetMessage.style.color = 'green';
+            } else {
+                resetMessage.textContent = 'Please enter a valid email address.';
+                resetMessage.style.color = 'red';
+            }
+
+            return false;
+        }
+
+        // Simulate account creation functionality
+        function createAccount() {
+            const username = document.getElementById('new-username').value;
+            const email = document.getElementById('new-email').value;
+            const password = document.getElementById('new-password').value;
+            const accountMessage = document.getElementById('account-message');
+
+            if (username && email && password) {
+                accountMessage.textContent = 'Account created successfully. You can now log in.';
+                accountMessage.style.color = 'green';
+            } else {
+                accountMessage.textContent = 'Please fill out all fields.';
+                accountMessage.style.color = 'red';
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

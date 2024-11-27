@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/account.css">
+</head>
+<body>
+    <section class="create-account-container">
+        <div class="create-account-box">
+            <h2>Create Account</h2>
+            <p>Fill in the details below to create your account.</p>
+            <form id="create-account-form" class="create-account-form">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn">Create Account</button>
+                <p class="login-link">
+                    Already have an account? <a href="index.html">Login here</a>
+                </p>
+            </form>
+        </div>
+    </section>
+    
+</body>
+
+
+<script>
+    document.getElementById('create-account-form').addEventListener('submit', function(e) {
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm-password').value;
+        
+        if (password !== confirmPassword) {
+            alert("Passwords do not match. Please try again.");
+            e.preventDefault(); // Prevent form submission
+        }
+    });
+</script>
+
+</html>

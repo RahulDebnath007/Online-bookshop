@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookwala Login</title>
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h3>BOOKWALA</h3>
+        </div>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Help & Support</a>
+            <a href="#">Settings</a>
+            <a href="scv.html">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Login Form Section -->
+    <div class="container">
+        <div class="form-box">
+            <h1>Login</h1>
+            <div class="underline"></div>
+            <form action="vendor1.html" method="POST">
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                </div>
+                <!-- Wrap the button inside an anchor tag -->
+                <a href="vendor1.html">
+                    <button type="button" class="btn">Sign In</button> <!-- type="button" so it won't submit the form -->
+                </a>
+                <br>
+                <a href="forgotpassword.html">Forgot Password</a>
+                <br>
+                <p>
+                    Don't have an account? <a href="signup.html" class="btn">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Created by <span>Rahul Debnath, Soumik Saha</span> &copy; 2024 Online Book Shop(Bookwala) - All Rights Reserved</p>
+    </footer>
+
+</body>
+
+</html>

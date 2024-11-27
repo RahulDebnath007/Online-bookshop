@@ -1,0 +1,139 @@
+:root{
+    --orange:#ff6347;
+    --dark-color: #ff4500;
+    --black:#444;
+    --light-color:#666;
+    --border:0.1rem solid rgba(0,0,0,0.1);
+    --border-hover:1rem solid var(--black);
+    --box-shadow:0 0.5rem 1rem rgba(0,0,0,0.1);
+}
+
+/* General body and page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Forgot password section styles */
+.forgot-password-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Forgot password box styles */
+.forgot-password-box,
+.change-password-box {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading style */
+.forgot-password-box h2,
+.change-password-box h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Text style for description */
+.forgot-password-box p,
+.change-password-box p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Input field styling */
+.forgot-password-form .input-group,
+.change-password-form .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.forgot-password-form .input-group label,
+.change-password-form .input-group label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.forgot-password-form .input-group input,
+.change-password-form .input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 0.3rem;
+}
+
+/* Submit button style */
+.forgot-password-form .btn,
+.change-password-form .btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #ff6347;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.forgot-password-form .btn:hover,
+.change-password-form .btn:hover {
+    background-color: #ff4500;
+}
+
+/* Back to login link styling */
+.forgot-password-box .back-to-login,
+.change-password-box .back-to-login {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.forgot-password-box .back-to-login a,
+.change-password-box .back-to-login a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password-box .back-to-login a:hover,
+.change-password-box .back-to-login a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .forgot-password-box,
+    .change-password-box {
+        padding: 1.5rem;
+    }
+
+    .forgot-password-box h2,
+    .change-password-box h2 {
+        font-size: 1.8rem;
+    }
+
+    .forgot-password-form .input-group input,
+    .change-password-form .input-group input {
+        font-size: 0.9rem;
+    }
+
+    .forgot-password-form .btn,
+    .change-password-form .btn {
+        font-size: 1rem;
+    }
+}
